@@ -27,10 +27,12 @@ def test(net, test_data):
 def train(net, train_data):
   '''train network on given training data'''
   ts = np.eye(10)
-  for row in train_data:
+  for i, row in enumerate(train_data):
+    if i % 1000 == 0:
+      print(i)
     digit = row[0]
     x = to_col(row[1:])
-    t = to_col(ts[digit, :])
+    t = to_col(ts[int(digit), :])
     net.train(x, t)
 
 if __name__ == '__main__':
@@ -47,5 +49,8 @@ accuracy = test(net, test_data)
 print(f'accuracy: {round(100 * accuracy, 2)}%')
 
 # train network
-
+train_data = load_data('mnistdata/mnist_train.csv')
+train(net, train_data)
 # test network again
+accuracy = test(net, test_data)
+print(f'accuracy: {round(100 * accuracy, 2)}%')
