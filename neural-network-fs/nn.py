@@ -19,3 +19,7 @@ class Layer:
 
   def forward_pass(self, x):
     return np.dot(self._W, x) + self._b
+
+if __name__ == '__main__':
+  l = Layer(3, 7)
+  print(l.forward_pass(np.array([1,2,3]).reshape(3,1)))
