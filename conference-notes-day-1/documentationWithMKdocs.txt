@@ -1,0 +1,8 @@
+- mkdocs based on markdown with multiple language support. static site generator geared towards building project docs.
+- mkdocs-material is a theme based on the material design theme and is the most popular theme for the documentation platform
+- static project sites can be hosted with Github pages directly from github repo
+
+- initialize project: mkdocs new .
+  - this creates yml config file and doc homepage
+- mkdocs serve
+  - builds on local server to preview docs

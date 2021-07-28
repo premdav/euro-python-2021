@@ -1,0 +1,6 @@
+site_name: premdav test docs
+
+theme:
+  name: material
+  palette:
+    primary: green
